@@ -15,7 +15,6 @@ Lyngk.Coordinates = function (c, l) {
         tableauJeux[7] = ["E", "F", "G", "H"];
         tableauJeux[8] = ["G"];
 
-        return (tableauJeux[l - 1].indexOf(c) !== -1);
-
+        return tableauJeux[l - 1].indexOf(c) !== -1;
     }
 };
