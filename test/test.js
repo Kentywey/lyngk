@@ -27,10 +27,7 @@ LyngkTestCase.prototype.testStory2 = function () {
 };
 
 LyngkTestCase.prototype.testStory3 = function() {
-    var toString="";
-    var coordinates = new Lyngk.Coordinates("A",3);
-    if (coordinates.is_valid()){
-        toString=coordinates.getLettre()+coordinates.getNombre();
-    }
-    assertEquals("A3",toString);
+
+    var coordonne = new Lyngk.Coordinates("A",3);
+    assertEquals("A3", coordonne);
 };
