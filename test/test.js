@@ -25,3 +25,12 @@ LyngkTestCase.prototype.testStory2 = function () {
     }
     assertEquals(43, coordonneOK);
 };
+
+LyngkTestCase.prototype.testStory3 = function() {
+    var toString="";
+    var coordinates = new Lyngk.Coordinates("A",3);
+    if (coordinates.is_valid()){
+        toString=coordinates.getLettre()+coordinates.getNombre();
+    }
+    assertEquals("A3",toString);
+};
