@@ -31,6 +31,18 @@ Lyngk.Coordinates = function (c, l) {
             return c + l;
         else
             return "invalid";
+    };
+
+    this.getLettre = function (){
+        return c;
+    };
+
+    this.getNumber = function () {
+        return 1;
     }
+
+    this.clone = function () {
+        return new Lyngk.Coordinates(this.getLettre(), this.getNumber());
+    };
 
 };
