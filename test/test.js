@@ -34,7 +34,14 @@ LyngkTestCase.prototype.testStory3 = function() {
 
 LyngkTestCase.prototype.testStory4 = function() {
 
-    var coordinates = new Lyngk.Coordinates('A', 1);
-    assertEquals("invalid", coordinates);
+    var coordonne = new Lyngk.Coordinates('A', 1);
+    assertEquals("invalid", coordonne);
 
+};
+
+LyngkTestCase.prototype.testStory5 = function() {
+    var coordonne = new Lyngk.Coordinates('A', 3);
+    var coordonneClone = coordonne.clone();
+    assertEquals("A", coordonneClone.get_letter());
+    assertEquals("3", coordonneClone.get_number());
 };
