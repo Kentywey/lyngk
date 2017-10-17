@@ -37,9 +37,9 @@ Lyngk.Coordinates = function (c, l) {
         return c;
     };
 
-    this.getNumber = function () {
+    this.getNumero = function () {
         return 1;
-    }
+    }ss
 
     this.clone = function () {
         return new Lyngk.Coordinates(this.getLettre(), this.getNumber());

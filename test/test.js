@@ -42,6 +42,6 @@ LyngkTestCase.prototype.testStory4 = function() {
 LyngkTestCase.prototype.testStory5 = function() {
     var coordonne = new Lyngk.Coordinates('A', 3);
     var coordonneClone = coordonne.clone();
-    assertEquals("A", coordonneClone.get_letter());
-    assertEquals("3", coordonneClone.get_number());
+    assertEquals("A", coordonneClone.getLettre());
+    assertEquals("3", coordonneClone.getNumero());
 };
