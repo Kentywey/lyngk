@@ -45,3 +45,17 @@ LyngkTestCase.prototype.testStory5 = function() {
     assertEquals("A", coordonneClone.getLettre());
     assertEquals("3", coordonneClone.getNumero());
 };
+
+LyngkTestCase.prototype.testStory6 = function(){
+    var lettres = ["A", "B", "C", "D", "E", "F", "G","H", "I"];
+    var tabEntier = new Array();
+    for(var i = 0 ; i < 9 ; i++) {
+        for (var j = 1; j <= 9; j++) {
+            var entierTest = (new Lyngk.Coordinates(lettres[i], j)).hash();
+            if (entierTest != 0 && tabEntier.indexOf(entierTest) == -1) {
+                tabEntier.push(entierTest);
+            }
+        }
+    }
+    assertEquals(43, tabEntier.length);
+};

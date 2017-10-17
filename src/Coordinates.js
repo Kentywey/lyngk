@@ -38,11 +38,11 @@ Lyngk.Coordinates = function (c, l) {
     };
 
     this.getNumero = function () {
-        return 1;
-    }ss
+        return l;
+    }
 
     this.clone = function () {
-        return new Lyngk.Coordinates(this.getLettre(), this.getNumber());
+        return new Lyngk.Coordinates(this.getLettre(), this.getNumero());
     };
 
 };
