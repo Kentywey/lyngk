@@ -57,5 +57,5 @@ LyngkTestCase.prototype.testStory6 = function(){
             }
         }
     }
-    assertEquals(43, tabEntier.length);
+    assertEquals(9, tabEntier.length);
 };

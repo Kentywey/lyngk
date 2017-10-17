@@ -26,14 +26,14 @@ Lyngk.Coordinates = function (c, l) {
             return "Erreur";
     }
      */
-        this.toString = function () {
+    this.toString = function () {
         if (this.is_valid())
             return c + l;
         else
             return "invalid";
     };
 
-    this.getLettre = function (){
+    this.getLettre = function () {
         return c;
     };
 
@@ -45,4 +45,12 @@ Lyngk.Coordinates = function (c, l) {
         return new Lyngk.Coordinates(this.getLettre(), this.getNumero());
     };
 
+    this.hash = function () {
+        var lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+        if (this.is_valid()) {
+            var resultat = (lettres.indexOf(this.getLettre() + 1).toString() + this.getNumero().toString());
+            return parseInt(resultat);
+        }
+        return 0;
+    };
 };
