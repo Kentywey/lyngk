@@ -31,3 +31,10 @@ LyngkTestCase.prototype.testStory3 = function() {
     var coordonne = new Lyngk.Coordinates("A",3);
     assertEquals("A3", coordonne);
 };
+
+LyngkTestCase.prototype.testStory4 = function() {
+
+    var coordinates = new Lyngk.Coordinates('A', 1);
+    assertEquals("invalid", coordinates);
+
+};
