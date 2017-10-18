@@ -107,3 +107,17 @@ LyngkTestCase.prototype.testStory10 = function() {
 
     assertEquals(Lyngk.State.FULL_STACK, intersection.get_etatActuel());
 };
+
+LyngkTestCase.prototype.testStory11 = function() {
+    var table = new Lyngk.Engine();
+    for (var l in Lyngk.Lignes){
+        for (var c in Lyngk.Colonnes){
+            var coordonne = new Lyngk.Coordinates(Lyngk.Colonnes[c], Lyngk.Lignes[l]);
+            var hash = coordonne.hash();
+            var table_coordonne = table.get_coordonne()[hash];
+            if (coordonne.is_valid() === true){
+                assertTrue(table_coordonne.get_etatActuel() === "ONE_PIECE");
+            }
+        }
+    }
+};
