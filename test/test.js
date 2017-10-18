@@ -59,3 +59,8 @@ LyngkTestCase.prototype.testStory6 = function(){
     }
     assertEquals(9, tabEntier.length);
 };
+
+LyngkTestCase.prototype.testStory7 = function(){
+    var intersection = new Lyngk.Intersection();
+    assertEquals(Lyngk.State.VACANT, intersection.get_etatActuel());
+};
