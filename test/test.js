@@ -2,12 +2,14 @@
 
 var LyngkTestCase = TestCase("LyngkTestCase");
 
+// Story 1
 LyngkTestCase.prototype.testStory1 = function () {
     var coordinates = new Lyngk.Coordinates("A", 1);
 
     assertFalse(coordinates.is_valid());
 };
 
+// Story 2
 LyngkTestCase.prototype.testStory2 = function () {
     var tableauLettre = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
     var tableauNombre = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -26,12 +28,14 @@ LyngkTestCase.prototype.testStory2 = function () {
     assertEquals(43, coordonneOK);
 };
 
+// Story 3
 LyngkTestCase.prototype.testStory3 = function() {
 
     var coordonne = new Lyngk.Coordinates("A",3);
     assertEquals("A3", coordonne);
 };
 
+// Story 4
 LyngkTestCase.prototype.testStory4 = function() {
 
     var coordonne = new Lyngk.Coordinates('A', 1);
@@ -39,6 +43,7 @@ LyngkTestCase.prototype.testStory4 = function() {
 
 };
 
+// Story 5
 LyngkTestCase.prototype.testStory5 = function() {
     var coordonne = new Lyngk.Coordinates('A', 3);
     var coordonneClone = coordonne.clone();
@@ -46,6 +51,7 @@ LyngkTestCase.prototype.testStory5 = function() {
     assertEquals("3", coordonneClone.getNumero());
 };
 
+// Story 6
 LyngkTestCase.prototype.testStory6 = function(){
     var lettres = ["A", "B", "C", "D", "E", "F", "G","H", "I"];
     var tabEntier = new Array();
@@ -60,11 +66,13 @@ LyngkTestCase.prototype.testStory6 = function(){
     assertEquals(9, tabEntier.length);
 };
 
+// Story 7
 LyngkTestCase.prototype.testStory7 = function(){
     var intersection = new Lyngk.Intersection();
     assertEquals(Lyngk.State.VACANT, intersection.get_etatActuel());
 };
 
+// Story 8
 LyngkTestCase.prototype.testStory8 = function(){
     var piece = new Lyngk.Piece();
     piece.set_couleur(Lyngk.Couleur.BLEU);
@@ -74,6 +82,7 @@ LyngkTestCase.prototype.testStory8 = function(){
     assertEquals(Lyngk.Couleur.BLEU , intersection.get_couleur());
 };
 
+// Story 9
 LyngkTestCase.prototype.testStory9 = function() {
     var premierePiece = new Lyngk.Piece();
     premierePiece.set_couleur(Lyngk.Couleur.BLEU);
@@ -87,7 +96,7 @@ LyngkTestCase.prototype.testStory9 = function() {
     assertEquals(Lyngk.Couleur.ROUGE , intersection.get_couleur());
 };
 
-
+// Story 10
 LyngkTestCase.prototype.testStory10 = function() {
     var piece = new Lyngk.Piece();
     piece.set_couleur(Lyngk.Couleur.BLEU);
@@ -97,4 +106,4 @@ LyngkTestCase.prototype.testStory10 = function() {
     }
 
     assertEquals(Lyngk.State.FULL_STACK, intersection.get_etatActuel());
-}; 
+};

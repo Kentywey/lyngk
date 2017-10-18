@@ -2,6 +2,7 @@
 
 Lyngk.Coordinates = function (c, l) {
 
+    // Fournis un tableau valid
     this.is_valid = function () {
 
         var tableauJeux = [];
@@ -18,7 +19,7 @@ Lyngk.Coordinates = function (c, l) {
         return tableauJeux[l - 1].indexOf(c) !== -1;
     };
 
-    /**
+    /** Ancien TOSTRING
      * this.toString = function () {
         if (this.is_valid())
             return c + l;
@@ -26,6 +27,8 @@ Lyngk.Coordinates = function (c, l) {
             return "Erreur";
     }
      */
+
+    // Tostring pour retourner "invalid" en cas de mauvaise coordonné
     this.toString = function () {
         if (this.is_valid())
             return c + l;
@@ -33,6 +36,7 @@ Lyngk.Coordinates = function (c, l) {
             return "invalid";
     };
 
+    //GETTER
     this.getLettre = function () {
         return c;
     };
@@ -41,10 +45,12 @@ Lyngk.Coordinates = function (c, l) {
         return l;
     }
 
+    // Permet de clone avec les coordonnées
     this.clone = function () {
         return new Lyngk.Coordinates(this.getLettre(), this.getNumero());
     };
 
+    // Calcul un entier unique selon coordonne
     this.hash = function () {
         var lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
         if (this.is_valid()) {
