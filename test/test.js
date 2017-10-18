@@ -86,3 +86,15 @@ LyngkTestCase.prototype.testStory9 = function() {
     assertEquals(Lyngk.State.STACK, intersection.get_etatActuel());
     assertEquals(Lyngk.Couleur.ROUGE , intersection.get_couleur());
 };
+
+
+LyngkTestCase.prototype.testStory10 = function() {
+    var piece = new Lyngk.Piece();
+    piece.set_couleur(Lyngk.Couleur.BLEU);
+    var intersection = new Lyngk.Intersection();
+    for(var i = 0 ; i < 5 ; i++){
+        intersection.pose(piece);
+    }
+
+    assertEquals(Lyngk.State.FULL_STACK, intersection.get_etatActuel());
+}; 
