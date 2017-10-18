@@ -32,4 +32,6 @@ Lyngk.Intersection = function () {
         }
         couleur = piece.get_couleur();
     };
+
+
 };
