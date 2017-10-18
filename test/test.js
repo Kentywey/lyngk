@@ -67,9 +67,9 @@ LyngkTestCase.prototype.testStory7 = function(){
 
 LyngkTestCase.prototype.testStory8 = function(){
     var piece = new Lyngk.Piece();
-    piece.setcouleur(Lyngk.Colors.BLEU);
+    piece.set_couleur(Lyngk.Couleur.BLEU);
     var intersection = new Lyngk.Intersection();
     intersection.pose(piece);
     assertEquals(Lyngk.State.ONE_PIECE, intersection.get_etatActuel());
-    assertEquals(Lyngk.Colors.BLEU , intersection.get_couleur());
+    assertEquals(Lyngk.Couleur.BLEU , intersection.get_couleur());
 };
