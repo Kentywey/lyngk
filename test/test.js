@@ -109,15 +109,35 @@ LyngkTestCase.prototype.testStory10 = function() {
 };
 
 LyngkTestCase.prototype.testStory11 = function() {
-    var table = new Lyngk.Engine();
-    for (var l in Lyngk.Lignes){
-        for (var c in Lyngk.Colonnes){
-            var coordonne = new Lyngk.Coordinates(Lyngk.Colonnes[c], Lyngk.Lignes[l]);
-            var hash = coordonne.hash();
-            var table_coordonne = table.get_coordonne()[hash];
-            if (coordonne.is_valid() === true){
-                assertTrue(table_coordonne.get_etatActuel() === "ONE_PIECE");
+    var engine = new Lyngk.Engine();
+    var tabTest = [];
+    var lettres = ["A", "B", "C", "D", "E", "F", "G","H", "I"];
+    for(var i = 0 ; i < 9 ; i++) {
+        for (var j = 1; j <= 9; j++) {
+            var coordonne = new Lyngk.Coordinates(lettres[i], j);
+
+            if (coordonne.is_valid()) {
+                var intersection = new Lyngk.Intersection();
+                intersection.set_coordonne(coordonne);
+                intersection.pose(new Lyngk.Piece());
+                tabTest.push(intersection);
             }
         }
     }
+
+    var test;
+    var intersections = engine.get_intersections();
+    for(var i = 0 ; i < tabTest.length ; i++ ){
+        if( (intersections[i].get_coordonne().getLettre() === tabTest[i].get_coordonne().getLettre())
+            && (intersections[i].get_coordinate().get_number() === tabTest[i].get_coordonne().getNumero())
+            && (intersections[i].get_etatActuel() === tabTest[i].get_etatActuel())
+            && intersections[i].get_pieces().length === 1 )
+            test = true;
+        else{
+            test = false;
+            break;
+        }
+
+    }
+    assertEquals(true,test);
 };
