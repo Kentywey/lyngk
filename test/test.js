@@ -129,7 +129,7 @@ LyngkTestCase.prototype.testStory11 = function() {
     var intersections = engine.get_intersections();
     for(var i = 0 ; i < tabTest.length ; i++ ){
         if( (intersections[i].get_coordonne().getLettre() === tabTest[i].get_coordonne().getLettre())
-            && (intersections[i].get_coordinate().get_number() === tabTest[i].get_coordonne().getNumero())
+            && (intersections[i].get_coordonne().getNumero() === tabTest[i].get_coordonne().getNumero())
             && (intersections[i].get_etatActuel() === tabTest[i].get_etatActuel())
             && intersections[i].get_pieces().length === 1 )
             test = true;

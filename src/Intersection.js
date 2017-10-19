@@ -20,8 +20,25 @@ Lyngk.Intersection = function () {
         return etatActuel;
     };
 
+    this.set_etatActuel= function(state){
+        etatActuel = state;
+    };
+
+
     this.get_couleur = function(){
         return couleur;
+    };
+
+    this.get_pieces = function(){
+        return pieces;
+    };
+
+    this.get_coordonne = function(){
+        return coordone;
+    };
+
+    this.set_coordonne = function(co){
+        this.coordonne = co;
     };
 
     // Pose une piece, en quand d'intersection complete, FULL_STACK, si initialiser : VACANT, si une pice = ONE_PIECE
