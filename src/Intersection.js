@@ -6,7 +6,7 @@ Lyngk.State = {VACANT: 0, ONE_PIECE: 1, STACK: 2, FULL_STACK: 3};
 Lyngk.Intersection = function () {
     var etatActuel;
     var couleur;
-    var nbPiece;
+    var piece=[];
     var coordonne;
 
     // De base etat = VACANT
@@ -43,20 +43,20 @@ Lyngk.Intersection = function () {
     };
 
     // Pose une piece, en quand d'intersection complete, FULL_STACK, si initialiser : VACANT, si une pice = ONE_PIECE
-    this.pose = function (piece) {
+    this.pose = function (p) {
         if(etatActuel != Lyngk.State.FULL_STACK){
             if(etatActuel == Lyngk.State.VACANT){
                 etatActuel = Lyngk.State.ONE_PIECE;
-                nbPiece = 1;
+                piece.push(p);
             }
             else{
                 etatActuel = Lyngk.State.STACK;
-                nbPiece++;
-                if(nbPiece == 5){
+                piece.push(p);
+                if(piece.length == 5){
                     etatActuel = Lyngk.State.FULL_STACK;
                 }
             }
-            couleur = piece.get_couleur();
+            couleur = p.get_couleur();
         }
     };
 

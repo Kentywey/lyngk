@@ -150,12 +150,12 @@ LyngkTestCase.prototype.testStory12 = function() {
     }
     var test = false;
     if(intersections.length === 43) {
-        if (nbBlack === Lyngk.NbColor.BLACK
-            && nbBlue === Lyngk.NbColor.BLUE
-            && nbRed === Lyngk.NbColor.RED
-            && nbIvory === Lyngk.NbColor.IVORY
-            && nbGreen === Lyngk.NbColor.GREEN
-            && nbWhite === Lyngk.NbColor.WHITE)
+        if (nbBlack === Lyngk.NbCouleur.BLACK
+            && nbBlue === Lyngk.NbCouleur.BLUE
+            && nbRed === Lyngk.NbCouleur.RED
+            && nbIvory === Lyngk.NbCouleur.IVORY
+            && nbGreen === Lyngk.NbCouleur.GREEN
+            && nbWhite === Lyngk.NbCouleur.WHITE)
             test = true;
     }
     assertEquals(true,test);
