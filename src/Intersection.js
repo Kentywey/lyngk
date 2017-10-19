@@ -7,6 +7,7 @@ Lyngk.Intersection = function () {
     var etatActuel;
     var couleur;
     var nbPiece;
+    var coordonne;
 
     // De base etat = VACANT
     this.init = function () {
@@ -34,7 +35,7 @@ Lyngk.Intersection = function () {
     };
 
     this.get_coordonne = function(){
-        return coordone;
+        return coordonne;
     };
 
     this.set_coordonne = function(co){
