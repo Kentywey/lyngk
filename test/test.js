@@ -123,3 +123,40 @@ LyngkTestCase.prototype.testStory11 = function() {
 
     assertEquals(true,test);
 };
+
+LyngkTestCase.prototype.testStory12 = function() {
+    var engine = new Lyngk.Engine();
+    var nbBlack = 0;
+    var nbBlue = 0;
+    var nbRed = 0;
+    var nbIvory= 0;
+    var nbGreen = 0;
+    var nbWhite = 0;
+
+    var intersections = engine.get_intersections();
+    for(var i = 0 ; i < intersections.length ; i++){
+        if(intersections[i].get_couleur() === Lyngk.Couleur.BLACK)
+            nbBlack++;
+        if(intersections[i].get_couleur() === Lyngk.Couleur.BLUE)
+            nbBlue++;
+        if(intersections[i].get_couleur() === Lyngk.Couleur.RED)
+            nbRed++;
+        if(intersections[i].get_couleur() === Lyngk.Couleur.IVORY)
+            nbIvory++;
+        if(intersections[i].get_couleur() === Lyngk.Couleur.GREEN)
+            nbGreen++;
+        if(intersections[i].get_couleur() === Lyngk.Couleur.WHITE)
+            nbWhite++;
+    }
+    var test = false;
+    if(intersections.length === 43) {
+        if (nbBlack === Lyngk.NbColor.BLACK
+            && nbBlue === Lyngk.NbColor.BLUE
+            && nbRed === Lyngk.NbColor.RED
+            && nbIvory === Lyngk.NbColor.IVORY
+            && nbGreen === Lyngk.NbColor.GREEN
+            && nbWhite === Lyngk.NbColor.WHITE)
+            test = true;
+    }
+    assertEquals(true,test);
+};
