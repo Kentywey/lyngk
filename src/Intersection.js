@@ -21,22 +21,29 @@ Lyngk.Intersection = function () {
         return etatActuel;
     };
 
-    this.set_etatActuel= function(state){
+    /**
+     * this.set_etatActuel= function(state){
         etatActuel = state;
     };
+     * @param state
+     */
 
 
     this.get_couleur = function(){
-        return couleur;
+        return piece[piece.length-1].get_couleur();
     };
 
     this.get_pieces = function(){
         return piece;
     };
 
-    this.get_coordonne = function(){
+    /**
+     * this.get_coordonne = function(){
         return coordonne;
     };
+     * @returns {*}
+     */
+
 
     this.set_coordonne = function(co){
         this.coordonne = co;
@@ -60,10 +67,7 @@ Lyngk.Intersection = function () {
                     etatActuel = Lyngk.State.FULL_STACK;
                 }
             }
-            couleur = p.get_couleur();
         }
     };
-
-
 
 };

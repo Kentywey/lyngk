@@ -194,3 +194,15 @@ LyngkTestCase.prototype.testStory14 = function() {
     }
     assertEquals(true,test);
 };
+
+LyngkTestCase.prototype.testStory15 = function() {
+
+    var engine = new Lyngk.Engine();
+    engine.deplacer("A3","B3");
+    var ancienneCouleur = engine.get_intersections("A3").get_couleur();
+    var ancienneHauteur = engine.get_intersections("B3").get_hauteur();
+    assertTrue(engine.get_intersections("A3").get_etatActuel()=== Lyngk.State.VACANT
+        && engine.get_intersections("B3").get_couleur() === ancienneCouleur
+        && engine.get_intersections("B3").get_hauteur() === ancienneHauteur+1);
+
+};
