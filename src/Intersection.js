@@ -16,7 +16,7 @@ Lyngk.Intersection = function () {
 
     this.init();
 
-    // Getter
+    // Getter & Setter
     this.get_etatActuel = function () {
         return etatActuel;
     };
@@ -40,6 +40,10 @@ Lyngk.Intersection = function () {
 
     this.set_coordonne = function(co){
         this.coordonne = co;
+    };
+
+    this.get_hauteur = function () {
+        return piece.length;
     };
 
     // Pose une piece, en quand d'intersection complete, FULL_STACK, si initialiser : VACANT, si une pice = ONE_PIECE

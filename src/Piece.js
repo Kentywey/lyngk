@@ -5,6 +5,7 @@ Lyngk.NbCouleur = {BLACK: 8, IVORY: 8, BLUE: 8, RED: 8, GREEN: 8, WHITE: 3};
 Lyngk.Piece = function () {
     var couleur;
 
+    //GETTER & SETTER
     this.set_couleur = function(c){
         couleur = c;
     };
@@ -12,6 +13,7 @@ Lyngk.Piece = function () {
     this.get_couleur = function () {
         return couleur;
     };
+
 
     this.addColorInit = function(intersections){
         var nbBlack = 0;

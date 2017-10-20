@@ -165,13 +165,14 @@ LyngkTestCase.prototype.testStory13 = function() {
 
     var test = false;
     var engine = new Lyngk.Engine();
-    var intercetions = engine.get_intersections();
+    var intersections = engine.get_intersections();
 
-    for (var i=0; i<intercetions.length; i++){
-        if(intercetions.get_hauteur()==1) {
+    for (var i=0; i<intersections.length; i++){
+        if(intersections[i].get_hauteur()==1) {
              test = true;
         }else{
              test = false;
+             break;
         }
     }
     assertEquals(true,test);
