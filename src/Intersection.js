@@ -31,7 +31,7 @@ Lyngk.Intersection = function () {
     };
 
     this.get_pieces = function(){
-        return pieces;
+        return piece;
     };
 
     this.get_coordonne = function(){

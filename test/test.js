@@ -177,3 +177,20 @@ LyngkTestCase.prototype.testStory13 = function() {
     }
     assertEquals(true,test);
 };
+
+LyngkTestCase.prototype.testStory14 = function() {
+
+    var test=false;
+    var engine = new Lyngk.Engine();
+    var intersections = engine.get_intersections();
+
+    for (var i=0; i<intersections.length; i++){
+        if(intersections[i].get_couleur()=== intersections[i].get_pieces()[intersections[i].get_hauteur()-1].get_couleur()) {
+            test = true;
+        }else{
+            test = false;
+            break;
+        }
+    }
+    assertEquals(true,test);
+};
