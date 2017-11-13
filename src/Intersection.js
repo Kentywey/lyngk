@@ -68,9 +68,13 @@ Lyngk.Intersection = function () {
     };
 
     this.retirer = function(intersection){
-        etatActuel= Lyngk.State.VACANT;
-        intersection.pose(piece[piece.length-1]);
-        piece.pop();
-    }
+        etatActuel = Lyngk.State.VACANT;
+        for(var i = 0 ; i < piece.length ; i++ ) {
+            intersection.pose(piece[i]);
+        }
+        while(piece.length > 0) {
+            piece.pop();
+        }
+    };
 
 };

@@ -53,7 +53,8 @@ Lyngk.Engine = function () {
             && ((Math.abs(diffLettres) === 1 && Math.abs(diffNombres) === 0)
                 || (Math.abs(diffLettres) === 0 && Math.abs(diffNombres) === 1)
                 || diffLettres === 1 && diffNombres === 1
-                || diffLettres === -1 && diffNombres === -1))
+                || diffLettres === -1 && diffNombres === -1)
+            && intersections[this.get_indexIntersections(coordA)].get_etatActuel() !== Lyngk.State.FULL_STACK)
             intersections[this.get_indexIntersections(coordA)].retirer(intersections[this.get_indexIntersections(coordB)]);
     }
 

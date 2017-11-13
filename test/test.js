@@ -228,8 +228,7 @@ LyngkTestCase.prototype.testStory16 = function(){
         engine.deplacer("B3", "B2");
         assertTrue(intersections[indexB3].get_etatActuel() === Lyngk.State.VACANT
             && intersections[indexB2].get_couleur() === ancienneCouleurB3
-            && intersections[indexB2].get_hauteur() === ancienneHauteurB2 + intersections[indexB3].get_hauteur());
-
+            && intersections[indexB2].get_hauteur() === 3);
 };
 
 
@@ -284,4 +283,4 @@ LyngkTestCase.prototype.testStory20 = function() {
     engine.deplacer("D2", "E2");
     assertTrue(intersections[engine.get_indexIntersections("E2")].get_etatActuel() === Lyngk.State.ONE_PIECE);
 
-};      
+};
