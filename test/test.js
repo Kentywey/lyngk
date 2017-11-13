@@ -235,11 +235,20 @@ LyngkTestCase.prototype.testStory16 = function(){
 
 LyngkTestCase.prototype.testStory17 = function() {
     var engine = new Lyngk.Engine();
-    var B2 = "B2";
-    var B3 = "B3";
-    engine.deplacer(B3, B2);
-    engine.deplacer(B2, B3);
+
+    engine.deplacer("B3", "B2");
+    engine.deplacer("B2", "B3");
 
     var intersections = engine.get_intersections();
-    assertTrue(intersections[engine.get_indexIntersections(B3)].get_etatActuel() === Lyngk.State.VACANT)
+    assertTrue(intersections[engine.get_indexIntersections("B3")].get_etatActuel() === Lyngk.State.VACANT)
+};
+
+LyngkTestCase.prototype.testStory18 = function() {
+    var engine = new Lyngk.Engine();
+
+    engine.deplacer("C2", "B3");
+
+    var intersections = engine.get_intersections();
+    assertTrue(intersections[engine.get_indexIntersections("B3")].get_etatActuel() === Lyngk.State.ONE_PIECE
+        && intersections[engine.get_indexIntersections("C2")].get_etatActuel() === Lyngk.State.ONE_PIECE);
 };
