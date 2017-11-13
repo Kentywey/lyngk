@@ -214,3 +214,21 @@ LyngkTestCase.prototype.testStory15 = function() {
 
 };
 
+LyngkTestCase.prototype.testStory16 = function(){
+        var engine = new Lyngk.Engine();
+
+        var intersections = engine.get_intersections();
+        var indexB3 = engine.get_indexIntersections("B3");
+        var indexB2 = engine.get_indexIntersections("B2");
+
+        engine.deplacer("A3", "B3");
+        var ancienneCouleurB3 = intersections[indexB3].get_couleur();
+        var ancienneHauteurB2 = intersections[indexB2].get_hauteur();
+
+        engine.deplacer("B3", "B2");
+        assertTrue(intersections[indexB3].get_etatActuel() === Lyngk.State.VACANT
+            && intersections[indexB2].get_couleur() === ancienneCouleurB3
+            && intersections[indexB2].get_hauteur() === ancienneHauteurB2 + intersections[indexB3].get_hauteur());
+
+};
+
