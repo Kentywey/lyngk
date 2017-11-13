@@ -41,6 +41,7 @@ Lyngk.Engine = function () {
 
     this.deplacer = function (coordA, coordB){
         var etatVacant = Lyngk.State.VACANT;
-        intersections[(this.get_indexIntersections(coordA))].retirer(intersections[this.get_indexIntersections(coordB)]);
-    }
+        if(!(intersections[this.get_indexIntersections(coordB)].get_etatActuel() === Lyngk.State.VACANT))
+            intersections[this.get_indexIntersections(coordA)].retirer(intersections[this.get_indexIntersections(coordB)])
+    };
 };
