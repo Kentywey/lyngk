@@ -198,11 +198,19 @@ LyngkTestCase.prototype.testStory14 = function() {
 LyngkTestCase.prototype.testStory15 = function() {
 
     var engine = new Lyngk.Engine();
+
+    var intersections = engine.get_intersections();
+    var indexA3 = engine.get_indexIntersections("A3");
+    var indexB3 = engine.get_indexIntersections("B3");
+
+    var ancienneCouleur = intersections[indexA3].get_couleur();
+    var ancienneHauteur = intersections[indexB3].get_hauteur();
+
     engine.deplacer("A3","B3");
-    var ancienneCouleur = engine.get_intersections("A3").get_couleur();
-    var ancienneHauteur = engine.get_intersections("B3").get_hauteur();
-    assertTrue(engine.get_intersections("A3").get_etatActuel()=== Lyngk.State.VACANT
-        && engine.get_intersections("B3").get_couleur() === ancienneCouleur
-        && engine.get_intersections("B3").get_hauteur() === ancienneHauteur+1);
+
+    assertTrue(intersections[indexA3].get_etatActuel()=== Lyngk.State.VACANT
+        && intersections[indexB3].get_couleur() === ancienneCouleur
+        && intersections[indexB3].get_hauteur() === ancienneHauteur+1);
 
 };
+

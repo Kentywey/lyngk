@@ -37,12 +37,9 @@ Lyngk.Intersection = function () {
         return piece;
     };
 
-    /**
-     * this.get_coordonne = function(){
-        return coordonne;
+    this.get_coordonne = function(){
+        return this.coordonne;
     };
-     * @returns {*}
-     */
 
 
     this.set_coordonne = function(co){
@@ -69,5 +66,11 @@ Lyngk.Intersection = function () {
             }
         }
     };
+
+    this.retirer = function(intersection){
+        etatActuel= Lyngk.State.VACANT;
+        intersection.pose(piece[piece.length-1]);
+        piece.pop();
+    }
 
 };
