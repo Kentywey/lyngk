@@ -232,3 +232,14 @@ LyngkTestCase.prototype.testStory16 = function(){
 
 };
 
+
+LyngkTestCase.prototype.testStory17 = function() {
+    var engine = new Lyngk.Engine();
+    var B2 = "B2";
+    var B3 = "B3";
+    engine.deplacer(B3, B2);
+    engine.deplacer(B2, B3);
+
+    var intersections = engine.get_intersections();
+    assertTrue(intersections[engine.get_indexIntersections(b3)].get_etatActuel() === Lyngk.State.VACANT)
+};
