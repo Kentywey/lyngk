@@ -272,3 +272,16 @@ LyngkTestCase.prototype.testStory19 = function() {
     engine.deplacer("H5","F3");
     assertTrue(intersections[engine.get_indexIntersections("H5")].get_etatActuel() === etatH5);
 };
+
+
+LyngkTestCase.prototype.testStory20 = function() {
+    var engine = new Lyngk.Engine();
+    var intersections = engine.get_intersections();
+    engine.deplacer("A3", "B3");
+    engine.deplacer("B3", "B2");
+    engine.deplacer("B2", "C2");
+    engine.deplacer("C2", "D2");
+    engine.deplacer("D2", "E2");
+    assertTrue(intersections[engine.get_indexIntersections("E2")].get_etatActuel() === Lyngk.State.ONE_PIECE);
+
+};      
