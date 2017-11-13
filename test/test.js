@@ -241,5 +241,5 @@ LyngkTestCase.prototype.testStory17 = function() {
     engine.deplacer(B2, B3);
 
     var intersections = engine.get_intersections();
-    assertTrue(intersections[engine.get_indexIntersections(b3)].get_etatActuel() === Lyngk.State.VACANT)
+    assertTrue(intersections[engine.get_indexIntersections(B3)].get_etatActuel() === Lyngk.State.VACANT)
 };
