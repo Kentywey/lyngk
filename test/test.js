@@ -243,6 +243,7 @@ LyngkTestCase.prototype.testStory17 = function() {
     assertTrue(intersections[engine.get_indexIntersections("B3")].get_etatActuel() === Lyngk.State.VACANT)
 };
 
+
 LyngkTestCase.prototype.testStory18 = function() {
     var engine = new Lyngk.Engine();
 
