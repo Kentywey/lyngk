@@ -10,7 +10,7 @@ Lyngk.Piece = function () {
         couleur = c;
     };
 
-    this.get_couleur = function () {
+    this.getColor = function () {
         return couleur;
     };
 
@@ -23,17 +23,17 @@ Lyngk.Piece = function () {
         var nbGreen = 0;
         var nbWhite = 0;
         for (var i = 0 ; i < intersections.length ; i++) {
-            if (intersections[i].get_couleur() === Lyngk.Couleur.BLACK)
+            if (intersections[i].getColor() === Lyngk.Couleur.BLACK)
                 nbBlack++;
-            if (intersections[i].get_couleur() === Lyngk.Couleur.BLUE)
+            if (intersections[i].getColor() === Lyngk.Couleur.BLUE)
                 nbBlue++;
-            if (intersections[i].get_couleur() === Lyngk.Couleur.RED)
+            if (intersections[i].getColor() === Lyngk.Couleur.RED)
                 nbRed++;
-            if (intersections[i].get_couleur() === Lyngk.Couleur.IVORY)
+            if (intersections[i].getColor() === Lyngk.Couleur.IVORY)
                 nbIvory++;
-            if (intersections[i].get_couleur() === Lyngk.Couleur.GREEN)
+            if (intersections[i].getColor() === Lyngk.Couleur.GREEN)
                 nbGreen++;
-            if (intersections[i].get_couleur() === Lyngk.Couleur.WHITE)
+            if (intersections[i].getColor() === Lyngk.Couleur.WHITE)
                 nbWhite++;
         }
 

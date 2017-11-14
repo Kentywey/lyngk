@@ -3,25 +3,25 @@
 Lyngk.Coordinates = function (c, l) {
 
     // Fournis un tableau valid
-    this.is_valid = function () {
+    var tableauJeux = [];
+    tableauJeux[0] = ["C"];
+    tableauJeux[1] = ["B", "C", "D", "E"];
+    tableauJeux[2] = ["A", "B", "C", "D", "E", "F", "G"];
+    tableauJeux[3] = ["B", "C", "D", "E", "F", "G"];
+    tableauJeux[4] = ["B", "C", "D", "E", "F", "G", "H"];
+    tableauJeux[5] = ["C", "D", "E", "F", "G", "H"];
+    tableauJeux[6] = ["C", "D", "E", "F", "G", "H", "I"];
+    tableauJeux[7] = ["E", "F", "G", "H"];
+    tableauJeux[8] = ["G"];
 
-        var tableauJeux = [];
-        tableauJeux[0] = ["C"];
-        tableauJeux[1] = ["B", "C", "D", "E"];
-        tableauJeux[2] = ["A", "B", "C", "D", "E", "F", "G"];
-        tableauJeux[3] = ["B", "C", "D", "E", "F", "G"];
-        tableauJeux[4] = ["B", "C", "D", "E", "F", "G", "H"];
-        tableauJeux[5] = ["C", "D", "E", "F", "G", "H"];
-        tableauJeux[6] = ["C", "D", "E", "F", "G", "H", "I"];
-        tableauJeux[7] = ["E", "F", "G", "H"];
-        tableauJeux[8] = ["G"];
 
+    this.isValid = function () {
         return tableauJeux[l - 1].indexOf(c) !== -1;
     };
 
     /** Ancien TOSTRING
      * this.toString = function () {
-        if (this.is_valid())
+        if (this.isValid())
             return c + l;
         else
             return "Erreur";
@@ -30,11 +30,13 @@ Lyngk.Coordinates = function (c, l) {
 
     // Tostring pour retourner "invalid" en cas de mauvaise coordonné
     this.toString = function () {
-        if (this.is_valid())
+        if (this.isValid()) {
             return c + l;
-        else
+        } else {
             return "invalid";
+        }
     };
+
 
     //GETTER
     this.getLettre = function () {
@@ -43,7 +45,7 @@ Lyngk.Coordinates = function (c, l) {
 
     this.getNumero = function () {
         return l;
-    }
+    };
 
     // Permet de clone avec les coordonnées
     this.clone = function () {
@@ -53,8 +55,10 @@ Lyngk.Coordinates = function (c, l) {
     // Calcul un entier unique selon coordonne
     this.hash = function () {
         var lettres = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
-        if (this.is_valid()) {
-            var resultat = (lettres.indexOf(this.getLettre() + 1).toString() + this.getNumero().toString());
+        if (this.isValid()) {
+            var testLetter = lettres.indexOf(this.getLettre() + 1);
+            var testNumber = this.getNumero();
+            var resultat = testLetter.toString() + testNumber.toString();
             return parseInt(resultat);
         }
         return 0;

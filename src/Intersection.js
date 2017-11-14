@@ -4,75 +4,69 @@ Lyngk.State = {VACANT: 0, ONE_PIECE: 1, STACK: 2, FULL_STACK: 3};
 
 //Constructeur d'une intersection
 Lyngk.Intersection = function () {
-    var etatActuel;
-    var couleur;
-    var piece=[];
-    var coordonne;
+    var actualState;
+    var piece = [];
+
 
     // De base etat = VACANT
     this.init = function () {
-        etatActuel = Lyngk.State.VACANT;
+        actualState = Lyngk.State.VACANT;
     };
 
     this.init();
 
     // Getter & Setter
-    this.get_etatActuel = function () {
-        return etatActuel;
+    this.getActualState = function () {
+        return actualState;
     };
 
     /**
      * this.set_etatActuel= function(state){
-        etatActuel = state;
+        actualState = state;
     };
      * @param state
      */
 
 
-    this.get_couleur = function(){
-        return piece[piece.length-1].get_couleur();
+    this.getColor = function () {
+        return piece[piece.length - 1].getColor();
     };
 
-    this.get_pieces = function(){
+    this.getPieces = function () {
         return piece;
     };
 
-    this.get_coordonne = function(){
+    this.getCoordinate = function () {
         return this.coordonne;
     };
 
 
-    this.set_coordonne = function(co){
+    this.setCoordinate = function (co) {
         this.coordonne = co;
     };
 
-    this.get_hauteur = function () {
+    this.getHeight = function () {
         return piece.length;
     };
 
-    // Pose une piece, en quand d'intersection complete, FULL_STACK, si initialiser : VACANT, si une pice = ONE_PIECE
     this.pose = function (p) {
-        if(etatActuel != Lyngk.State.FULL_STACK){
-            if(etatActuel == Lyngk.State.VACANT){
-                etatActuel = Lyngk.State.ONE_PIECE;
-                piece.push(p);
+        if (actualState !== Lyngk.State.FULL_STACK) {
+            piece.push(p);
+            if (piece.length >= 3) {
+                actualState = piece.length - Math.floor(piece.length / 2);
             }
-            else{
-                etatActuel = Lyngk.State.STACK;
-                piece.push(p);
-                if(piece.length == 5){
-                    etatActuel = Lyngk.State.FULL_STACK;
-                }
+            else {
+                actualState = piece.length;
             }
         }
     };
 
-    this.retirer = function(intersection){
-        etatActuel = Lyngk.State.VACANT;
-        for(var i = 0 ; i < piece.length ; i++ ) {
+    this.retirer = function (intersection) {
+        actualState = Lyngk.State.VACANT;
+        for (var i = 0; i < piece.length; i++) {
             intersection.pose(piece[i]);
         }
-        while(piece.length > 0) {
+        while (piece.length > 0) {
             piece.pop();
         }
     };
